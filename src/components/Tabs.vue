@@ -19,51 +19,25 @@
       </p>
     </main>
     <footer class="tabs--switch">
-      <div class="tabs--switch--select">
-        <button @click="selectTab('estate')"
-                :class="{'active-tab': tabName === 'estate'}"
-                class="tabs--switch--select__button">
 
-          Plan osiedla
-        </button>
-
-        <button @click="selectTab('houses')"
-                :class="{'active-tab': tabName === 'houses'}"
-                class="tabs--switch--select__button">
-
-          Plany domów
-        </button>
-      </div>
-
-      <transition name="fade" mode="out-in">
-        <appTabEstate v-if="tabName === 'estate'"></appTabEstate>
-        <appTabHouses v-if="tabName ==='houses'"></appTabHouses>
-      </transition>
+      <appTabEstate></appTabEstate>
+      <appTabHouses></appTabHouses>
     </footer>
   </section>
 </template>
 
 <script>
-import TabEstate from './tabs/Tab-estate.vue';
-import TabHouses from './tabs/Tab-houses.vue';
+  import TabEstate from './tabs/Tab-estate.vue';
+  import TabHouses from './tabs/Tab-houses.vue';
 
-export default {
-  name: 'Tabs',
-  components: {
-    appTabEstate: TabEstate,
-    appTabHouses: TabHouses,
-  },
-  data() {
-    return {
-      tabName: 'estate',
-    };
-  },
-  methods: {
-    selectTab(tabName) {
-      this.tabName = tabName;
+  export default {
+    name: 'Tabs',
+    components: {
+      appTabEstate: TabEstate,
+      appTabHouses: TabHouses,
     },
-  },
-};
+
+  };
 </script>
 
 <style scoped lang="scss">
@@ -96,30 +70,9 @@ export default {
         @include font(2rem, 700, $dark-grey-2);
       }
       &--text {
-        @include font(1.6rem, 400, $dark-grey-2);
+        @include font(1.5rem, 400, $dark-grey-2);
         line-height: 2.6rem;
         text-align: center;
-      }
-    }
-
-    &--switch {
-      margin-top: 4rem;
-      width: 100%;
-      &--select {
-        display: flex;
-        justify-content: flex-start;
-        border-bottom: 1px solid $gold;
-
-        &__button {
-          @include font(1.6rem, 500, $dark-grey-2);
-          text-transform: uppercase;
-          background-color: transparent;
-          padding: 1rem 2rem;
-          border: none;
-          cursor: pointer;
-          transition: background-color .3s, color .3s;
-          outline: none;
-        }
       }
     }
   }

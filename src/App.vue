@@ -11,7 +11,11 @@
 
   * {
     box-sizing: border-box;
+  }
+
+  html {
     font-size: 10px;
+
   }
 
   body {

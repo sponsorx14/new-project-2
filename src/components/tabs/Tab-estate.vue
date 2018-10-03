@@ -29,16 +29,19 @@ export default {
   .tabs--estate {
     margin-top: 2rem;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     &--text {
       @include font(1.5rem, 400, $dark-grey-2);
-      text-align: left;
+      text-align: center;
       line-height: 2.6rem;
     }
 
     &__image {
-      max-width: 50rem;
-      max-height: 30rem;
+      max-width: 70rem;
+      opacity: .9;
     }
   }
 

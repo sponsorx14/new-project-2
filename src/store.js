@@ -116,6 +116,38 @@ export default new Vuex.Store({
       'DSC_0192.jpg',
       'DSC_0193.jpg',
     ],
+    attributesList: [
+      {
+        name: 'Położenie',
+        text: 'Osiedle Parkowe zlokalizowane jest w sąsiedztwie Parku Miejskiego, Rynku w Sycowie oraz Urzędu Miasta Gminy Syców.',
+        logo: 'compass-3.svg',
+      },
+      {
+        name: 'Komunikacja',
+        text: 'Brak informacji',
+        logo: 'direction-sign.svg',
+      },
+      {
+        name: 'Edukacja',
+        text: 'W okolicy znajduje się Publiczne Przedszkole nr 3 w odległośći 500 m oraz szkoła Podstawowa nr 3 w odległośći 800m.',
+        logo: 'book-open-2.svg',
+      },
+      {
+        name: 'Opieka',
+        text: 'W odległości 500 metrów znajduje się Samodzielny Publiczny Zakład Opieki Zrowotnej "Przychodnia" im. Dr. Jamimowicza',
+        logo: 'heart.svg',
+      },
+      {
+        name: 'Zakupy',
+        text: 'W odległości 300m znajdują się market NETTO oraz market Biedronka',
+        logo: 'basket-1.svg',
+      },
+      {
+        name: 'Kościoły',
+        text: 'W okolicy znajduje się zabytkowy Kościół Ewangelicki w odległości 600 m, oraz Kościół Rzymskokatolicki pw. Św. Apostoła Piotra i Pawła w odległości 870 m',
+        logo: 'church.svg',
+      },
+    ]
 
   },
   mutations: {
