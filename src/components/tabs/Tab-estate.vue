@@ -42,6 +42,7 @@ export default {
     &__image {
       max-width: 70rem;
       opacity: .9;
+      margin: 4rem 0;
     }
   }
 

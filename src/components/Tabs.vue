@@ -27,17 +27,17 @@
 </template>
 
 <script>
-  import TabEstate from './tabs/Tab-estate.vue';
-  import TabHouses from './tabs/Tab-houses.vue';
+import TabEstate from './tabs/Tab-estate.vue';
+import TabHouses from './tabs/Tab-houses.vue';
 
-  export default {
-    name: 'Tabs',
-    components: {
-      appTabEstate: TabEstate,
-      appTabHouses: TabHouses,
-    },
+export default {
+  name: 'Tabs',
+  components: {
+    appTabEstate: TabEstate,
+    appTabHouses: TabHouses,
+  },
 
-  };
+};
 </script>
 
 <style scoped lang="scss">

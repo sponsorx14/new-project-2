@@ -65,7 +65,6 @@ export default {
   @import '../../scss-snippets/colors.scss';
 
   .tabs--houses {
-    margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
 

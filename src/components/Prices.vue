@@ -1,6 +1,5 @@
 <template>
-  <section class="prices section">
-    prices
+  <section class="prices">
   </section>
 </template>
 

@@ -28,14 +28,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'Attributes',
-    computed: {
-      attributesList() {
-        return this.$store.state.attributesList;
-      }
-    }
-  };
+export default {
+  name: 'Attributes',
+  computed: {
+    attributesList() {
+      return this.$store.state.attributesList;
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
