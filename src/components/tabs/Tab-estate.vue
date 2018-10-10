@@ -43,6 +43,7 @@ export default {
       max-width: 70rem;
       opacity: .9;
       margin: 4rem 0;
+      border: 1rem solid $light-white-2;
     }
   }
 

@@ -7,14 +7,14 @@
     <div class="gallery--wrapper">
 
       <agile :arrows="true"
-             :dots="false"
-             :speed="1500"
+             :dots="true"
+             :speed="1800"
              :next-arrow="right"
              :prev-arrow="left"
              :fade="false"
              :autoplay="true"
-             :autoplay-speed="5000"
-             :pause-on-hover="false">
+             :autoplay-speed="6000"
+             :pause-on-hover="true">
 
         <div v-for="(image, i) in galleryLinks"
              :key="i"
@@ -22,9 +22,13 @@
              class="slide">
         </div>
       </agile>
-
-
     </div>
+    <router-link tag="button"
+                 to="/gallery"
+    class="gallery--open-gallery__button">
+
+      Otwórz galerię zdjęć
+    </router-link>
   </section>
 </template>
 
@@ -40,7 +44,7 @@ export default {
   },
   computed: {
     galleryLinks() {
-      return this.$store.state.galleryLinks;
+      return this.$store.state.randomGalleryLinks;
     },
   },
 };
@@ -57,6 +61,23 @@ export default {
     align-items: center;
     padding: 8rem 0;
     background-color: $dark-grey-4;
+
+    &--open-gallery__button {
+      padding: 1.5rem 3rem;
+      margin: 5rem 0 0;
+      background-color: transparent;
+      border: .2rem solid $white;
+      @include font(1.6rem, 500, $white);
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: .3s background-color, .3s color;
+
+      &:hover {
+        background-color: $white;
+        color: $dark-grey-4;
+        transition: .3s background-color, .3s color;
+      }
+    }
   }
 
   .gallery--wrapper {
@@ -66,18 +87,6 @@ export default {
     align-items: center;
     margin: 4rem 0;
     width: 90vw;
-  }
-
-  .gallery__image {
-    padding: 1rem;
-    cursor: pointer;
-    transform: scale(1);
-    transition: transform .3s;
-
-    &:hover {
-      transform: scale(1.02);
-      transition: transform .3s;
-    }
   }
 
   .section--title {
@@ -91,13 +100,43 @@ export default {
       size: cover;
     }
     border: 10px solid $dark-grey-3;
-    height: 60rem;
+    height: 55rem;
   }
 
   .agile {
     width: 100%;
     max-width: 100rem;
     position: relative;
+
+    &__dots {
+      bottom: -4rem;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+    }
+
+    &__dot {
+      button {
+        background-color: transparent;
+        border-radius: 50%;
+        height: 1.4rem;
+        width: 1.4rem;
+        margin: 0 .7rem;
+        padding: 0;
+        border: 1px solid #fff;
+
+        &:hover {
+          background-color: #fff;
+        }
+      }
+
+      &--current {
+        button {
+          background-color: #fff;
+        }
+      }
+    }
+
     &__arrow {
       width: 10rem;
       top: 0;

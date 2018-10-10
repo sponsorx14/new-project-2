@@ -103,7 +103,7 @@ export default new Vuex.Store({
         value: '3,58 m2',
       },
     ],
-    galleryLinks: [
+    allGalleryLinks: [
       'DSC_0183-min.jpg',
       'DSC_0184-min.jpg',
       'DSC_0185-min.jpg',
@@ -124,6 +124,20 @@ export default new Vuex.Store({
       'DV1005_III_0000PS.jpg',
       'DV1005_III_0002PS-min.jpg',
       'DV1005_III_0003PS-min.jpg',
+    ],
+    randomGalleryLinks: [
+      'DSC_0184-min.jpg',
+      'DSC_0189-min.jpg',
+      'DV1005_III_0000PS.jpg',
+      'DSC_0191-min.jpg',
+      'DSC_0201-min.jpg',
+      'DV1005_III_0002PS-min.jpg',
+      'DSC_0202-min.jpg',
+      'DSC_0203-min.jpg',
+      'DV1005_III_0003PS-min.jpg',
+      'DSC_0204-min.jpg',
+      'DSC_0205-min.jpg',
+      '3DV1005salon-min.jpg',
     ],
     attributesList: [
       {

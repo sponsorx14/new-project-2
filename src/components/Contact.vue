@@ -96,15 +96,15 @@
 </template>
 
 <script>
-  export default {
-    name: 'Contact',
-    data() {
-      return {
-        isInput1Focused: false,
-        isInput2Focused: false,
-      }
-    },
-  };
+export default {
+  name: 'Contact',
+  data() {
+    return {
+      isInput1Focused: false,
+      isInput2Focused: false,
+    };
+  },
+};
 </script>
 
 <style scoped lang="scss">
