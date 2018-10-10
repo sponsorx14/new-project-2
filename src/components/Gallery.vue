@@ -5,7 +5,6 @@
     <h2 class="section--title">Galeria</h2>
 
     <div class="gallery--wrapper">
-
       <agile :arrows="true"
              :dots="true"
              :speed="1800"
