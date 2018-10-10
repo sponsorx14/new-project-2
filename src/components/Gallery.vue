@@ -56,7 +56,7 @@ export default {
     justify-content: center;
     align-items: center;
     padding: 8rem 0;
-    background-color: #282828;
+    background-color: $dark-grey-4;
   }
 
   .gallery--wrapper {
@@ -90,7 +90,7 @@ export default {
       position: center;
       size: cover;
     }
-    border: 10px solid #3A3A3A;
+    border: 10px solid $dark-grey-3;
     height: 60rem;
   }
 

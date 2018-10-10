@@ -41,31 +41,31 @@ export default new Vuex.Store({
         value: '50,28 m2',
       },
       {
-        name: 'Wiatrołap:',
+        name: '1.1 Wiatrołap:',
         value: '2,52 m2',
       },
       {
-        name: 'WC:',
+        name: '1.2 WC:',
         value: '2,58 m2',
       },
       {
-        name: 'Komunikacja:',
+        name: '1.3 Komunikacja:',
         value: '3,32 m2 (5,59 m2)',
       },
       {
-        name: 'Salon z kuchnią:',
+        name: '1.4 Salon z kuchnią:',
         value: '25,96 m2',
       },
       {
-        name: 'Garaż:',
+        name: '1.5 Garaż:',
         value: '15,90 m2',
       },
       {
-        name: 'Podest:',
+        name: '1.6 Podest:',
         value: '3,29 m2',
       },
       {
-        name: 'Taras:',
+        name: '1.7 Taras:',
         value: '11,50 m2',
       },
     ],
@@ -75,31 +75,31 @@ export default new Vuex.Store({
         value: '53,87 m2',
       },
       {
-        name: 'Schody:',
+        name: '1.1 Schody:',
         value: '3,90 m2',
       },
       {
-        name: 'Komunikacja:',
+        name: '1.2 Komunikacja:',
         value: '3,61 m2',
       },
       {
-        name: 'Łazienka:',
-        value: '5,63 m2',
-      },
-      {
-        name: 'Pokój nr 1:',
+        name: '1.3 Pokój nr 1:',
         value: '19,21 m2 (20,05 m2)',
       },
       {
-        name: 'Pokój nr 2:',
+        name: '1.4 Łazienka:',
+        value: '5,63 m2',
+      },
+      {
+        name: '1.5 Pokój nr 2:',
         value: '10,78 m2',
       },
       {
-        name: 'Pokój nr 3:',
+        name: '1.6 Pokój nr 3:',
         value: '10,74 m2',
       },
       {
-        name: 'Balkon:',
+        name: '1.7 Balkon:',
         value: '3,58 m2',
       },
     ],
@@ -133,7 +133,7 @@ export default new Vuex.Store({
       },
       {
         name: 'Komunikacja',
-        text: 'Brak informacji',
+        text: 'Osiedle Parkowe znajduje się blisko trasy s8, co daje szybkie oraz bespośrednie połączenie z Wrocławiem.',
         logo: 'direction-sign.svg',
       },
       {
@@ -152,7 +152,7 @@ export default new Vuex.Store({
         logo: 'basket-1.svg',
       },
       {
-        name: 'Kościoły',
+        name: 'Zabytki i punkty sakralne',
         text: 'W okolicy znajduje się zabytkowy Kościół Ewangelicki w odległości 600 m, oraz Kościół Rzymskokatolicki pw. Św. Apostoła Piotra i Pawła w odległości 870 m',
         logo: 'church.svg',
       },

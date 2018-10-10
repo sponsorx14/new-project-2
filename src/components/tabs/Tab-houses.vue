@@ -1,7 +1,7 @@
 <template>
   <main class="tabs--houses">
     <article class="tabs--houses--text">
-      Powierzchnia użytkowa wynosi 111 m&#178; , która gwarantuje komfort oraz wygodę.
+      Powierzchnia użytkowa wynosi 104,15 m&#178; , która gwarantuje komfort oraz wygodę.
       Wnętrze zostało bardzo starannie rozplanowane – na parterze znajduje się salon z
       aneksem kuchennym i częścią jadalnianą, z którego można wyjść na taras oraz niewielka
       toaleta. Poddasze podzielono między dwa pokoje dla dzieci, dużą łazienkę oraz wygodną

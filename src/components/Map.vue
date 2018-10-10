@@ -24,7 +24,7 @@ export default {
 
   .map {
     padding: 5rem 0;
-    background-color: $dark-blue;
+    background-color: $dark-grey-4;
 
     &--wrapper {
       display: flex;
