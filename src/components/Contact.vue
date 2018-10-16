@@ -7,9 +7,9 @@
 
       <div class="contact--wrapper">
         <article class="contact--details">
-          <p class="contact--details__company-name">Nazwa firmy kontaktowej</p>
-          <p class="contact--details__company-address">Adres firmy kontaktowej</p>
-          <p class="contact--details__owner-name">Imie nazwisko</p>
+          <p class="contact--details__company-name">{{ getContactInformation.main.name }}</p>
+          <p class="contact--details__company-address">{{ getContactInformation.main.address1 }}</p>
+          <p class="contact--details__company-address">{{ getContactInformation.main.address2 }}</p>
 
           <div class="contact--icons--wrapper">
             <div class="contact--phone">
@@ -18,7 +18,9 @@
                   alt="">
 
               <span class="contact--phone__title">Telefon</span>
-              <p class="contact--phone__details">+48 777 777 777</p>
+              <a class="contact--phone__details">{{ getContactInformation.phone.first }}</a>
+              <a class="contact--phone__details">{{ getContactInformation.phone.second }}</a>
+              <a class="contact--phone__details">{{ getContactInformation.phone.third }}</a>
             </div>
 
             <div class="contact--email">
@@ -27,7 +29,11 @@
                    alt="">
 
               <span class="contact--email__title">Email</span>
-              <p class="contact--email__details">przykładowyemail@gmail.com</p>
+              <a :href="getContactInformation.email.first"
+                 class="contact--email__details">
+
+                {{ getContactInformation.email.first }}
+              </a>
             </div>
           </div>
 
@@ -83,7 +89,7 @@
             </span>
           </div>
 
-          <button class="contact--form__button"
+          <button class="main__button"
                   type="submit">
 
             Wyślij wiadomość
@@ -104,16 +110,20 @@ export default {
       isInput2Focused: false,
     };
   },
+  computed: {
+    getContactInformation() {
+      return this.$store.state.contactInformation;
+    }
+  }
 };
 </script>
 
 <style scoped lang="scss">
-  @import '../scss-snippets/mixins.scss';
-  @import '../scss-snippets/colors.scss';
+  @import '../scss-snippets/main.scss';
 
   .contact {
     min-height: 80vh;
-    padding: 3rem 0;
+    padding: 8rem 0;
     background: url('../assets/img/leone-venter-559377-unsplash.jpg') 0/cover no-repeat;
 
     .container {
@@ -121,7 +131,6 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding-top: 4rem;
     }
 
     &--wrapper {
@@ -158,8 +167,9 @@ export default {
     &--icons--wrapper {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       margin-top: 5rem;
+
     }
 
     &--phone,
@@ -178,7 +188,12 @@ export default {
 
       &__details {
         @include font(1.7rem, 500, $dark-grey-2);
-        margin: 3rem 0;
+        flex-basis: 100%;
+        margin: 1rem 0;
+
+        &:nth-of-type(1) {
+          margin-top: 2rem;
+        }
       }
     }
 
@@ -188,7 +203,7 @@ export default {
       justify-content: center;
       background-color: $white;
       padding: 3rem;
-      min-width: 55rem;
+      min-width: 50rem;
       box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.2);
 
       &__title {
@@ -269,24 +284,6 @@ export default {
         height: 100%;
         transition: 0.4s;
       }
-
-      &__button {
-        padding: 2rem;
-        margin-top: 1rem;
-        @include font(1.5rem, 500, $white);
-        text-transform: uppercase;
-        background-color: $gold;
-        border: 2px solid transparent;
-        cursor: pointer;
-        transition: .3s border, .3s background-color, .3s color;
-
-        &:hover {
-          background-color: transparent;
-          border: 2px solid $gold;
-          color: $gold;
-          transition: .3s border, .3s background-color, .3s color;
-        }
-      }
     }
   }
 
@@ -318,6 +315,63 @@ export default {
   .section--title {
     @include font(2.6rem, 500, $gold);
     border-bottom: 1px solid $gold;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .contact--details {
+      width: 40%;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .contact--details {
+      margin-right: 0;
+    }
+    .contact--icons--wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .contact--email {
+      margin-top: 3rem;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 860px) {
+    .contact--details {
+      text-align: center;
+      width: 85%;
+    }
+
+    .contact--wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact--email,
+    .contact--phone {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .contact--email {
+      margin-bottom: 3rem;
+    }
+
+    .contact--form {
+      margin-top: 2rem;
+      width: 80%;
+      min-width: 0;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .contact--form {
+      width: 100%;
+    }
   }
 
 </style>

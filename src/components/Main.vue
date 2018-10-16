@@ -1,12 +1,12 @@
 <template>
   <section class="main">
     <main class="main--background-image">
-      <div class="main--informations">
-        <p class="main--informations__location">Wrocław / Syców</p>
+      <div class="main--information">
+        <p class="main--information__location">Wrocław / Syców</p>
 
-        <h1 class="main--informations__main-info">Nowe domy na sprzedaż</h1>
+        <h1 class="main--information__main-info">Nowe domy na sprzedaż</h1>
 
-        <div class="main--informations__buttons">
+        <div class="main--information__buttons">
           <a v-scroll-to="{el: '.prices', easing: 'linear'}"
              class="main-buttons">
 
@@ -33,15 +33,11 @@ export default {
       section: 0,
     };
   },
-  methods: {
-
-  },
 };
 </script>
 
 <style scoped lang="scss">
-  @import '../scss-snippets/mixins.scss';
-  @import '../scss-snippets/colors.scss';
+  @import '../scss-snippets/main.scss';
 
   .main {
     max-width: 100vw;
@@ -52,13 +48,13 @@ export default {
       padding-top: 7rem;
       max-width: 100%;
       height: 100%;
-      background-color: rgba(255, 255, 255, .65);
+      background-color: rgba(255, 255, 255, .70);
       display: flex;
       justify-content: center;
       align-content: center;
     }
 
-    &--informations {
+    &--information {
       width: 100%;
       transform: translateY(-7rem);
       display: flex;
@@ -76,6 +72,8 @@ export default {
         margin: 2rem;
         @include font(4rem, 700, $dark-grey);
         text-transform: uppercase;
+        text-align: center;
+        line-height: 1.3;
       }
 
       &__buttons {
@@ -97,6 +95,19 @@ export default {
             transition: color .3s, border-color .3s;
           }
         }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .main--information__buttons{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .main-buttons {
+        margin: 1rem 0;
       }
     }
   }

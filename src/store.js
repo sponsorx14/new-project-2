@@ -7,10 +7,6 @@ export default new Vuex.Store({
   state: {
     navigationLinks: [
       {
-        name: 'main',
-        translation: '',
-      },
-      {
         name: 'tabs',
         translation: 'Inwestycja',
       },
@@ -171,6 +167,44 @@ export default new Vuex.Store({
         logo: 'church.svg',
       },
     ],
+    contactInformation: {
+      main: {
+        name: 'KOMPLEX Sp. Z o.o.',
+        address1: 'Ul. Drzewieckiego 3',
+        address2: '46 – 100 Namysłów'
+      },
+      phone: {
+        first: '+48 533 207 972',
+        second: '+48 507 058 448',
+        third: '77 41 03 243'
+      },
+      email: {
+        first: 'osiedleparkowe@o2.pl'
+      }
+    },
+    tabs: {
+      descriptionText: `Nasza inwestycja budowy domków zabudowy szeregowej zlokalizowana jest w
+        mieście Syców, pow.oleśnickim, woj. dolnośląskim.
+        Znakomite połączenie z Wrocławiem trasą S8 (ok. 40 minut jazdy,
+        2 zjazdy do Sycowa – węzeł zachodni i wschodni) jest wielką zaletą
+        lokalizacji inwestycji.`,
+
+      estateDescriptionText: `Budowa domków realizowana jest przy ul. Leśnej w bliskim sąsiedztwie ul. Kolejowej.
+      Malownicze położenie działek podkreśla sąsiedztwo parku miejskiego, który zwany jest
+      zielonymi płucami Sycowa, wraz
+      z placem zabaw dla najmłodszych i siłownią. Za parkiem znajduje
+      się kompleks rekreacyjno – sportowy w postaci orlika z boiskiem do piłki siatkowej
+      jak i koszykówki. W przyszłości
+      nieopodal powstanie nowoczesny budynek komendy miejskiej Policji w Sycowie.`,
+
+      housesDescriptionText: `Powierzchnia użytkowa wynosi 104,15 m&#178; , która gwarantuje komfort oraz wygodę.
+      Wnętrze zostało bardzo starannie rozplanowane – na parterze znajduje się salon z
+      aneksem kuchennym i częścią jadalnianą, z którego można wyjść na taras oraz niewielka
+      toaleta. Poddasze podzielono między dwa pokoje dla dzieci, dużą łazienkę oraz wygodną
+      sypialnię dla rodziców. W bryłę każdego segmentu wpisano jednostanowiskowy garaż. Elewacja o
+      jasnej kolorystyce ma nowoczesny charakter. Każdy segment posiada własny taras oraz działkę,
+      które będą doskonałym miejscem odpoczynku.`
+    }
 
   },
   mutations: {

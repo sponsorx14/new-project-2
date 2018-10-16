@@ -19,8 +19,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import '../scss-snippets/mixins.scss';
-  @import '../scss-snippets/colors.scss';
+  @import '../scss-snippets/main.scss';
 
   .map {
     padding: 5rem 0;

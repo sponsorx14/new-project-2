@@ -12,7 +12,7 @@
       <main class="attributes--wrapper">
         <div v-for="(item, i) in attributesList"
              :key="i"
-             class="attributes--single-attribute">
+             class="attributes--single-attribute col-xs-12 col-sm-8 col-md-6 col-lg-4">
 
           <img :src="require(`@/assets/svg/${item.logo}`)"
                class="attributes--single-attribute__logo"
@@ -39,8 +39,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import '../scss-snippets/mixins.scss';
-  @import '../scss-snippets/colors.scss';
+  @import '../scss-snippets/main.scss';
 
   .attributes {
     padding: 5rem 0;
@@ -56,23 +55,18 @@ export default {
     &--wrapper {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     &--single-attribute {
       min-height: 20rem;
       border-radius: .5rem;
-      padding: 2.5rem;
-      margin: 2rem;
-      flex: 0 0 30%;
+      padding: 3rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       transition: .5s box-shadow;
-
-      &__logo {
-
-      }
 
       &__name {
         @include font(1.8rem, 500, $dark-grey-2);
@@ -85,16 +79,8 @@ export default {
         margin-top: 0;
 
       }
-
-      &:hover {
-        box-shadow: 0 0 20px 1px #ccc;
-        transition: .5s box-shadow;
-      }
     }
-
-
   }
-
 
   .section--description {
     margin: 4rem 0;

@@ -1,13 +1,7 @@
 <template>
   <main class="tabs--houses">
     <article class="tabs--houses--text">
-      Powierzchnia użytkowa wynosi 104,15 m&#178; , która gwarantuje komfort oraz wygodę.
-      Wnętrze zostało bardzo starannie rozplanowane – na parterze znajduje się salon z
-      aneksem kuchennym i częścią jadalnianą, z którego można wyjść na taras oraz niewielka
-      toaleta. Poddasze podzielono między dwa pokoje dla dzieci, dużą łazienkę oraz wygodną
-      sypialnię dla rodziców. W bryłę każdego segmentu wpisano jednostanowiskowy garaż. Elewacja o
-      jasnej kolorystyce ma nowoczesny charakter. Każdy segment posiada własny taras oraz działkę,
-      które będą doskonałym miejscem odpoczynku.
+    {{getTabHouseDescriptionText}}
     </article>
 
     <div class="tabs--houses--information">
@@ -38,9 +32,9 @@
     </div>
 
     <div class="tabs--houses--images">
-      <img src="../../assets/img/lms026_r1.jpg" alt="" class="tabs--houses--images__image">
+      <img src="../../assets/img/1.png" alt="" class="tabs--houses--images__image">
 
-      <img src="../../assets/img/lms026_r2.jpg" alt="" class="tabs--houses--images__image">
+      <img src="../../assets/img/2.png" alt="" class="tabs--houses--images__image">
     </div>
   </main>
 </template>
@@ -56,13 +50,16 @@ export default {
     atticInformation() {
       return this.$store.state.atticInformation;
     },
+
+    getTabHouseDescriptionText() {
+      return this.$store.state.tabs.housesDescriptionText;
+    }
   },
 };
 </script>
 
 <style scoped lang="scss">
-  @import '../../scss-snippets/mixins.scss';
-  @import '../../scss-snippets/colors.scss';
+  @import '../../scss-snippets/main.scss';
 
   .tabs--houses {
     display: flex;
@@ -103,6 +100,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
 
       &__image{
         max-width: 50%;
@@ -110,7 +108,55 @@ export default {
         cursor: pointer;
       }
     }
+  }
 
+  @media only screen and (max-width: 1200px) {
+    .tabs--houses {
+      &--information {
+        margin: 4rem 2rem;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    .tabs--houses {
+      &--information {
+        margin: 4rem 0;
+
+        &--wrapper {
+          margin: 4rem 2rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 820px) {
+    .tabs--houses {
+      &--information {
+        flex-direction: column;
+        align-items: center ;
+
+        &--wrapper {
+          margin: 2rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .tabs--houses--text {
+      text-align: left;
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    .tabs--houses--images {
+      flex-direction: column;
+
+      &__image {
+        max-width: 70vw;
+      }
+    }
   }
 
 </style>

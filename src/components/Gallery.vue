@@ -11,7 +11,7 @@
              :next-arrow="right"
              :prev-arrow="left"
              :fade="false"
-             :autoplay="true"
+             :autoplay="false"
              :autoplay-speed="6000"
              :pause-on-hover="true">
 
@@ -50,8 +50,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../scss-snippets/mixins.scss';
-  @import '../scss-snippets/colors.scss';
+  @import '../scss-snippets/main.scss';
 
   .gallery {
     display: flex;
@@ -170,4 +169,45 @@ export default {
     }
   }
 
+  @media only screen and (max-width: 1200px) {
+    .gallery--wrapper {
+      width: 75vw;
+    }
+    .slide {
+      height: 50vh;
+    }
+  }
+  
+  @media only screen and (max-width: 992px) {
+    .slide {
+      width: 100%;
+    }
+
+    .gallery--wrapper {
+      width: 85vw;
+    }
+
+    .agile__arrow {
+      display: none;
+    }
+    .agile__dots {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .slide {
+      height: 40vh;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .slide {
+      height: 35vh;
+    }
+    @media only screen and (max-width: 600px) {
+      .slide {
+        height: 30vh;
+      }
+    }
+  }
 </style>

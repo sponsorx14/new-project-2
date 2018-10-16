@@ -11,16 +11,12 @@
       </h3>
 
       <p class="tabs--description--text">
-        Nasza inwestycja budowy domków zabudowy szeregowej zlokalizowana jest w
-        mieście Syców, pow.oleśnickim, woj. dolnośląskim.
-        Znakomite połączenie z Wrocławiem trasą S8 (ok. 40 minut jazdy,
-        2 zjazdy do Sycowa – węzeł zachodni i wschodni) jest wielką zaletą
-        lokalizacji inwestycji.
+        {{ getDescriptionText }}
       </p>
     </main>
     <footer class="tabs--switch">
-
       <appTabEstate></appTabEstate>
+
       <appTabHouses></appTabHouses>
     </footer>
   </section>
@@ -36,20 +32,23 @@ export default {
     appTabEstate: TabEstate,
     appTabHouses: TabHouses,
   },
-
+  computed: {
+    getDescriptionText() {
+      return this.$store.state.tabs.descriptionText;
+    }
+  }
 };
 </script>
 
 <style scoped lang="scss">
-  @import '../scss-snippets/mixins.scss';
-  @import '../scss-snippets/colors.scss';
+  @import '../scss-snippets/main.scss';
 
   .tabs {
     background-color: $white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5rem 0;
+    padding: 5rem 2rem;
     margin-bottom: 4rem;
 
     &--heading {
@@ -65,9 +64,11 @@ export default {
       flex-direction: column;
       align-items: center;
       margin-top: 4rem;
+      padding: 0 .5rem;
 
       &--title {
         @include font(2rem, 700, $dark-grey-2);
+        text-align: center;
       }
       &--text {
         @include font(1.5rem, 400, $dark-grey-2);
@@ -86,6 +87,12 @@ export default {
     background-color: $gold;
     color: $white;
     transition: background-color .3s, color .3s;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .tabs--description--text {
+      text-align: left;
+    }
   }
 
 </style>
