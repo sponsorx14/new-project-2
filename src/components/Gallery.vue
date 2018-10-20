@@ -1,6 +1,7 @@
 <template>
   <section class="gallery">
-    <img src="../assets/svg/camera-2.svg" alt="">
+    <img src="../assets/svg/camera-2.svg"
+         alt="">
 
     <h2 class="section--title">Galeria</h2>
 
@@ -11,32 +12,44 @@
              :next-arrow="right"
              :prev-arrow="left"
              :fade="false"
-             :autoplay="false"
+             :autoplay="true"
              :autoplay-speed="6000"
              :pause-on-hover="true">
 
         <div v-for="(image, i) in galleryLinks"
+             @click="showImage(image)"
              :key="i"
              :style="{'background-image': 'url(' + require(`@/assets/img/${image}`) + ')'}"
              class="slide">
         </div>
       </agile>
     </div>
-    <router-link tag="button"
-                 to="/gallery"
-    class="gallery--open-gallery__button">
+    <button @click="expandGallery"
+            class="gallery--open-gallery__button">
 
       Otwórz galerię zdjęć
-    </router-link>
+    </button>
+
+    <transition name="fade">
+      <app-gallery-view v-if="isGalleryExpanded"></app-gallery-view>
+    </transition>
+
   </section>
 </template>
 
 <script>
+import GalleryView from './GalleryView.vue';
+import showImage from '../show-image.mixin';
 
 export default {
   name: 'Gallery',
+  mixins: [showImage],
+  components: {
+    appGalleryView: GalleryView,
+  },
   data() {
     return {
+      isGalleryExpanded: false,
       left: '<svg class="arrow-svg" x="0px" y="0px" viewBox="0 0 24 24" width="60px" height="60px"><path d="M16.2,21c0.3,0,0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L9.6,12L17,4.7c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0L6.8,12l8.8,8.7C15.7,20.9,16,21,16.2,21z"/></svg>',
       right: '<svg class="arrow-svg" x="0px" y="0px" viewBox="0 0 24 24" width="60px" height="60px"><path d="M7.8,21c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.4-7.3L7,4.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l8.8,8.7l-8.8,8.7C8.3,20.9,8,21,7.8,21z"/></svg>',
     };
@@ -44,6 +57,11 @@ export default {
   computed: {
     galleryLinks() {
       return this.$store.state.randomGalleryLinks;
+    },
+  },
+  methods: {
+    expandGallery() {
+      this.isGalleryExpanded = !this.isGalleryExpanded;
     },
   },
 };
@@ -68,6 +86,7 @@ export default {
       @include font(1.6rem, 500, $white);
       text-transform: uppercase;
       cursor: pointer;
+      outline: none;
       transition: .3s background-color, .3s color;
 
       &:hover {
@@ -97,6 +116,7 @@ export default {
       position: center;
       size: cover;
     }
+    cursor: pointer;
     border: 10px solid $dark-grey-3;
     height: 55rem;
   }
@@ -177,7 +197,7 @@ export default {
       height: 50vh;
     }
   }
-  
+
   @media only screen and (max-width: 992px) {
     .slide {
       width: 100%;
@@ -200,14 +220,10 @@ export default {
       height: 40vh;
     }
   }
+
   @media only screen and (max-width: 600px) {
     .slide {
       height: 35vh;
-    }
-    @media only screen and (max-width: 600px) {
-      .slide {
-        height: 30vh;
-      }
     }
   }
 </style>

@@ -113,8 +113,8 @@ export default {
   computed: {
     getContactInformation() {
       return this.$store.state.contactInformation;
-    }
-  }
+    },
+  },
 };
 </script>
 

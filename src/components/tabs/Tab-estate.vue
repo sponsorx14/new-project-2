@@ -1,23 +1,28 @@
 <template>
   <main class="tabs--estate">
     <article class="tabs--estate--text">
-    {{getEsateDescriptionText}}
+      {{getEsateDescriptionText}}
     </article>
 
     <img src="../../assets/img/DV1005_III_0003PS-min.jpg"
          alt=""
+         @click="showImage('DV1005_III_0003PS-min.jpg')"
          class="tabs--estate__image">
   </main>
 </template>
 
 <script>
+import showImage from '../../show-image.mixin';
+
 export default {
   name: 'Tab-estate',
+  mixins: [showImage],
+
   computed: {
     getEsateDescriptionText() {
       return this.$store.state.tabs.estateDescriptionText;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -43,6 +48,7 @@ export default {
       width: 50vw;
       opacity: .9;
       margin: 4rem 0;
+      cursor: pointer;
       border: 1rem solid $light-white-2;
     }
   }

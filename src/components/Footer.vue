@@ -3,7 +3,8 @@
     <div class="container">
       <div class="footer--phone">
         <img src="../assets/svg/smartphone-iphone-white.svg" alt="">
-        <span v-for="number in getContactDetails.phone"
+        <span v-for="(number, i) in getContactDetails.phone"
+              :key="i"
               class="footer--phone__details">
 
           {{ number }}
@@ -12,7 +13,8 @@
 
       <div class="footer--email">
         <img src="../assets/svg/email-white.svg" alt="">
-        <span v-for="email in getContactDetails.email"
+        <span v-for="(email, i) in getContactDetails.email"
+              :key="i"
               class="footer--email__details">
 
           {{ email }}
@@ -24,14 +26,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'Footer',
-    computed: {
-      getContactDetails() {
-        return this.$store.state.contactInformation;
-      }
-    }
-  };
+export default {
+  name: 'Footer',
+  computed: {
+    getContactDetails() {
+      return this.$store.state.contactInformation;
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">

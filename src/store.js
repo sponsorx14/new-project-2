@@ -5,7 +5,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    showOverlay: false,
+    currentImg: '3DV1005salon-min.jpg',
     navigationLinks: [
+      {
+        name: 'main',
+        translation: '',
+      },
       {
         name: 'tabs',
         translation: 'Inwestycja',
@@ -100,6 +106,8 @@ export default new Vuex.Store({
       },
     ],
     allGalleryLinks: [
+      'construction-1.png',
+      'construction-2.png',
       'DSC_0183-min.jpg',
       'DSC_0184-min.jpg',
       'DSC_0185-min.jpg',
@@ -171,16 +179,16 @@ export default new Vuex.Store({
       main: {
         name: 'KOMPLEX Sp. Z o.o.',
         address1: 'Ul. Drzewieckiego 3',
-        address2: '46 – 100 Namysłów'
+        address2: '46 – 100 Namysłów',
       },
       phone: {
         first: '+48 533 207 972',
         second: '+48 507 058 448',
-        third: '77 41 03 243'
+        third: '77 41 03 243',
       },
       email: {
-        first: 'osiedleparkowe@o2.pl'
-      }
+        first: 'osiedleparkowe@o2.pl',
+      },
     },
     tabs: {
       descriptionText: `Nasza inwestycja budowy domków zabudowy szeregowej zlokalizowana jest w
@@ -203,14 +211,29 @@ export default new Vuex.Store({
       toaleta. Poddasze podzielono między dwa pokoje dla dzieci, dużą łazienkę oraz wygodną
       sypialnię dla rodziców. W bryłę każdego segmentu wpisano jednostanowiskowy garaż. Elewacja o
       jasnej kolorystyce ma nowoczesny charakter. Każdy segment posiada własny taras oraz działkę,
-      które będą doskonałym miejscem odpoczynku.`
-    }
+      które będą doskonałym miejscem odpoczynku.`,
+    },
 
   },
   mutations: {
+    setImageUrl(state, payload) {
+      state.currentImg = payload.img;
+      state.showOverlay = payload.showOverlay;
+      document.querySelectorAll('body')[0].style.overflow = 'hidden';
+    },
 
+    closeOverlay(state) {
+      state.showOverlay = false;
+      document.querySelectorAll('body')[0].style.overflow = 'auto';
+    },
   },
   actions: {
+    setImageUrl({ commit }, payload) {
+      commit('setImageUrl', payload);
+    },
 
+    closeOverlay({ commit }) {
+      commit('closeOverlay');
+    },
   },
 });

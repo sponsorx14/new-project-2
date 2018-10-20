@@ -1,13 +1,13 @@
 <template>
   <nav :class="{'active-nav': windowPosition > 70}"
+       v-if="!showOverlay"
        class="nav">
-    <div class="container">
-      <div v-scroll-spy-active="{class: 'active-link'}"
-           v-scroll-spy-link
-           class="nav--wrapper">
 
+    <div class="container">
+      <div class="nav--wrapper">
         <div class="logo">
-          <a class="logo--link"></a>
+          <a v-scroll-to="{el: '.main', easing: 'linear'}"
+              class="logo--link"></a>
         </div>
 
         <div @click="toggleHamburger"
@@ -17,8 +17,13 @@
           <span class="line"></span>
         </div>
 
-        <ul class="nav--list">
+        <ul :class="{'toggle-navigation': activeHamburger}"
+            v-scroll-spy-active="{class: 'active-link'}"
+            v-scroll-spy-link
+            class="nav--list">
+
           <li v-for="(link, index) in navigationLinks"
+              @click="hideNavigation"
               :key="index"
               class="nav--list__link">
 
@@ -35,35 +40,43 @@
 </template>
 
 <script>
-  export default {
-    name: 'Header',
-    data() {
-      return {
-        windowPosition: 0,
-        activeHamburger: false,
-      };
+export default {
+  name: 'Header',
+  data() {
+    return {
+      windowPosition: 0,
+      activeHamburger: false,
+    };
+  },
+  methods: {
+    setWindowPosition() {
+      this.windowPosition = window.scrollY;
     },
-    methods: {
-      setWindowPosition() {
-        this.windowPosition = window.scrollY;
-      },
 
-      toggleHamburger() {
-        this.activeHamburger = !this.activeHamburger;
-      }
+    toggleHamburger() {
+      this.activeHamburger = !this.activeHamburger;
     },
-    computed: {
-      navigationLinks() {
-        return this.$store.state.navigationLinks;
-      },
+
+    hideNavigation() {
+      this.activeHamburger = false;
     },
-    mounted() {
-      window.addEventListener('scroll', this.setWindowPosition);
+  },
+  computed: {
+    showOverlay() {
+      return this.$store.state.showOverlay;
     },
-    destroyed() {
-      window.removeEventListener('scroll', this.setWindowPosition);
+
+    navigationLinks() {
+      return this.$store.state.navigationLinks;
     },
-  };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.setWindowPosition);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.setWindowPosition);
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -120,6 +133,10 @@
         display: flex;
         justify-content: center;
         align-content: center;
+
+        &:first-child {
+          display: none;
+        }
       }
     }
   }
@@ -169,7 +186,7 @@
       width: 100%;
       height: 100%;
       background-color: $dark-grey;
-      transition: all 300ms ease-in-out;
+      transition: all .5s ease-in-out;
     }
 
     &:after {
@@ -181,7 +198,7 @@
       width: 100%;
       height: 100%;
       background-color: $dark-grey;
-      transition: all 300ms ease-in-out;
+      transition: all .5s ease-in-out;
     }
   }
 
@@ -216,10 +233,61 @@
   @media only screen and (max-width: 920px) {
     .hamburger {
       display: block;
+      z-index: 2;
+
+      &.active-hamburger {
+        .line:before,
+        .line:after {
+          background-color: $grey;
+        }
+      }
     }
 
     .nav--list {
-      display: none;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0;
+      padding: 7rem 0 0;
+      width: 30rem;
+      height: 100vh;
+      background-color: $dark-grey-4;
+      top: 0;
+      right: -30rem;
+      transition: right .5s ease-in-out;
+
+      &__link {
+        height: auto;
+        padding: 2.5rem;
+      }
+
+      &__anchor {
+        color: $grey;
+      }
+    }
+
+    .toggle-navigation {
+      right: 0;
+      transition: right .5s ease-in-out;
+    }
+
+    .active-link {
+      .nav--list__anchor {
+        border-color: transparent;
+      }
+    }
+  }
+
+  @media only screen and(max-width: 450px) {
+    .nav--list {
+      width: 100%;
+      right: -100%;
+    }
+
+    .toggle-navigation {
+      right: 0;
     }
   }
 

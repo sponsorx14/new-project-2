@@ -35,8 +35,8 @@ export default {
   computed: {
     getDescriptionText() {
       return this.$store.state.tabs.descriptionText;
-    }
-  }
+    },
+  },
 };
 </script>
 

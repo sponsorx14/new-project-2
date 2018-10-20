@@ -1,7 +1,7 @@
 <template>
   <main class="tabs--houses">
     <article class="tabs--houses--text">
-    {{getTabHouseDescriptionText}}
+      {{getTabHouseDescriptionText}}
     </article>
 
     <div class="tabs--houses--information">
@@ -12,8 +12,8 @@
           <tr v-for="(detail, i) in groundFloorInformation"
               :key="i">
 
-            <td class="tabs--houses--information--table--data"> {{detail.name}} </td>
-            <td class="tabs--houses--information--table--data"> {{detail.value}} </td>
+            <td class="tabs--houses--information--table--data"> {{detail.name}}</td>
+            <td class="tabs--houses--information--table--data"> {{detail.value}}</td>
           </tr>
         </table>
       </div>
@@ -24,24 +24,34 @@
           <tr v-for="(detail, i) in atticInformation"
               :key="i">
 
-            <td class="tabs--houses--information--table--data"> {{detail.name}} </td>
-            <td class="tabs--houses--information--table--data"> {{detail.value}} </td>
+            <td class="tabs--houses--information--table--data"> {{detail.name}}</td>
+            <td class="tabs--houses--information--table--data"> {{detail.value}}</td>
           </tr>
         </table>
       </div>
     </div>
 
     <div class="tabs--houses--images">
-      <img src="../../assets/img/1.png" alt="" class="tabs--houses--images__image">
+      <img @click="showImage('construction-1.png')"
+          src="../../assets/img/construction-1.png"
+           alt=""
+          class="tabs--houses--images__image">
 
-      <img src="../../assets/img/2.png" alt="" class="tabs--houses--images__image">
+      <img @click="showImage('construction-2.png')"
+           src="../../assets/img/construction-2.png"
+           alt=""
+           class="tabs--houses--images__image">
     </div>
   </main>
 </template>
 
 <script>
+import showImage from '../../show-image.mixin';
+
 export default {
   name: 'Tab-houses',
+  mixins: [showImage],
+
   computed: {
     groundFloorInformation() {
       return this.$store.state.groundFloorInformation;
@@ -53,7 +63,7 @@ export default {
 
     getTabHouseDescriptionText() {
       return this.$store.state.tabs.housesDescriptionText;
-    }
+    },
   },
 };
 </script>
@@ -96,13 +106,13 @@ export default {
       }
     }
 
-    &--images{
+    &--images {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
 
-      &__image{
+      &__image {
         max-width: 50%;
         padding: 1rem;
         cursor: pointer;
@@ -134,7 +144,7 @@ export default {
     .tabs--houses {
       &--information {
         flex-direction: column;
-        align-items: center ;
+        align-items: center;
 
         &--wrapper {
           margin: 2rem;

@@ -5,7 +5,7 @@
     <h2 class="section--title">Cennik</h2>
 
     <div class="prices--product">
-      <img class="prices--product__image" src="../assets/img/111.png" alt="">
+      <img class="prices--product__image" src="../assets/img/house-prices.png" alt="">
       <p class="prices--product__price">Cena domu z ogródkiem:</p>
       <p class="prices--product__price--bold">od 295 000 zł</p>
 
@@ -22,9 +22,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'Prices',
-  };
+export default {
+  name: 'Prices',
+};
 </script>
 
 <style scoped lang="scss">

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
+    <appOverlay></appOverlay>
     <appHeader></appHeader>
-
     <div v-scroll-spy>
       <appMain></appMain>
       <appTabs></appTabs>
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import Overlay from '../components/Overlay.vue';
 import Main from '../components/Main.vue';
 import Header from '../components/Header.vue';
 import Tabs from '../components/Tabs.vue';
@@ -29,6 +30,7 @@ import Footer from '../components/Footer.vue';
 export default {
   name: 'home',
   components: {
+    appOverlay: Overlay,
     appMain: Main,
     appHeader: Header,
     appTabs: Tabs,
@@ -41,4 +43,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .home {
+    position: relative;
+  }
+</style>
 
