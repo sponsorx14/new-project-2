@@ -119,7 +119,7 @@ export default {
   }
 
   @media only screen and (max-width: 768px) and (orientation: landscape) {
-    .overlay-close {
+    .overlay--close {
       top: 0;
       right: 0;
       transform: translateX(0);
