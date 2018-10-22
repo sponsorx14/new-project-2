@@ -131,16 +131,12 @@ export default new Vuex.Store({
     ],
     randomGalleryLinks: [
       'DSC_0184-min.jpg',
-      'DSC_0189-min.jpg',
       'DV1005_III_0000PS.jpg',
-      'DSC_0191-min.jpg',
       'DSC_0201-min.jpg',
       'DV1005_III_0002PS-min.jpg',
       'DSC_0202-min.jpg',
-      'DSC_0203-min.jpg',
       'DV1005_III_0003PS-min.jpg',
       'DSC_0204-min.jpg',
-      'DSC_0205-min.jpg',
       '3DV1005salon-min.jpg',
     ],
     attributesList: [
