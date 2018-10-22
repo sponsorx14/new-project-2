@@ -84,8 +84,8 @@ export default {
       z-index: 4;
       position: absolute;
       top: 7rem;
-      left: 50%;
-      transform: translateX(-25%)
+      right: 50%;
+      transform: translateX(50%)
 
     }
   }
@@ -120,7 +120,9 @@ export default {
 
   @media only screen and (max-width: 768px) and (orientation: landscape) {
     .overlay-close {
-      top: 5rem;
+      top: 0;
+      right: 0;
+      transform: translateX(0);
     }
     .slide {
       height: 85vh;
