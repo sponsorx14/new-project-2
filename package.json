@@ -30,6 +30,9 @@
     "vue-template-compiler": "^2.5.17",
     "webpack-dev-server": "^2.7.1"
   },
+  "babel": {
+    "presets": ["@babel/preset-env", "es2015"]
+  },
   "engines": {
     "node": "8.9.3"
   },
