@@ -281,6 +281,10 @@ export default {
   }
 
   @media only screen and(max-width: 450px) {
+    .container {
+      padding: 0;
+    }
+
     .nav--list {
       width: 100%;
       right: -100%;

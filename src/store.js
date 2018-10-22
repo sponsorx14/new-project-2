@@ -205,7 +205,7 @@ export default new Vuex.Store({
       jak i koszykówki. W przyszłości
       nieopodal powstanie nowoczesny budynek komendy miejskiej Policji w Sycowie.`,
 
-      housesDescriptionText: `Powierzchnia użytkowa wynosi 104,15 m&#178; , która gwarantuje komfort oraz wygodę.
+      housesDescriptionText: `Powierzchnia użytkowa wynosi 104,15 m2; , która gwarantuje komfort oraz wygodę.
       Wnętrze zostało bardzo starannie rozplanowane – na parterze znajduje się salon z
       aneksem kuchennym i częścią jadalnianą, z którego można wyjść na taras oraz niewielka
       toaleta. Poddasze podzielono między dwa pokoje dla dzieci, dużą łazienkę oraz wygodną

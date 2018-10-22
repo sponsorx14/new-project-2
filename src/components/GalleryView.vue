@@ -4,8 +4,7 @@
          :key="i"
          @click="showImage(image)"
          :src="require(`@/assets/img/${image}`)"
-         alt=""
-         class="gallery-view__image">
+         class="gallery-view__image col-xs-12 col-sm-6 col-lg-4">
   </div>
 
 </template>
@@ -33,7 +32,6 @@ export default {
     margin: 4rem 0;
 
     &__image {
-      max-width: 33.3%;
       padding: 1rem;
       cursor: pointer;
       transform: scale(1);

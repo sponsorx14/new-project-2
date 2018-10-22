@@ -56,6 +56,7 @@ export default {
 
     &--information {
       width: 100%;
+      height: 100vh;
       transform: translateY(-7rem);
       display: flex;
       flex-direction: column;

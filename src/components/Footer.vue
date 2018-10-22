@@ -76,8 +76,9 @@ export default {
   @media only screen and (max-width: 450px) {
     .footer {
       &--phone {
+        flex-wrap: wrap;
         &__details {
-          margin: 0.5rem;
+          margin: 0.8rem;
         }
       }
     }

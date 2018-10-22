@@ -169,4 +169,10 @@ export default {
     }
   }
 
+  @media only screen and (max-width: 450px) {
+    .tabs--houses--information--wrapper {
+      margin: 2rem 0;
+    }
+  }
+
 </style>

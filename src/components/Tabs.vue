@@ -1,5 +1,5 @@
 <template>
-  <section class="tabs container">
+  <section class="tabs">
     <header class="tabs--heading">
       <img src="../assets/svg/bank-notes-3.svg" alt="">
 
@@ -14,30 +14,31 @@
         {{ getDescriptionText }}
       </p>
     </main>
-    <footer class="tabs--switch">
+    <div class="tabs--information">
       <appTabEstate></appTabEstate>
 
       <appTabHouses></appTabHouses>
-    </footer>
+    </div>
+
   </section>
 </template>
 
 <script>
-import TabEstate from './tabs/Tab-estate.vue';
-import TabHouses from './tabs/Tab-houses.vue';
+  import TabEstate from './tabs/Tab-estate.vue';
+  import TabHouses from './tabs/Tab-houses.vue';
 
-export default {
-  name: 'Tabs',
-  components: {
-    appTabEstate: TabEstate,
-    appTabHouses: TabHouses,
-  },
-  computed: {
-    getDescriptionText() {
-      return this.$store.state.tabs.descriptionText;
+  export default {
+    name: 'Tabs',
+    components: {
+      appTabEstate: TabEstate,
+      appTabHouses: TabHouses,
     },
-  },
-};
+    computed: {
+      getDescriptionText() {
+        return this.$store.state.tabs.descriptionText;
+      },
+    },
+  };
 </script>
 
 <style scoped lang="scss">
@@ -76,6 +77,13 @@ export default {
         text-align: center;
       }
     }
+
+    &--information {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .section--title {
@@ -92,6 +100,12 @@ export default {
   @media only screen and (max-width: 768px) {
     .tabs--description--text {
       text-align: left;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    .tabs{
+      padding: 5rem .5rem;
     }
   }
 

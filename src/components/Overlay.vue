@@ -117,4 +117,13 @@ export default {
       min-height: 0;
     }
   }
+
+  @media only screen and (max-width: 768px) and (orientation: landscape) {
+    .overlay-close {
+      top: 5rem;
+    }
+    .slide {
+      height: 85vh;
+    }
+  }
 </style>
