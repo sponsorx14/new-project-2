@@ -32,13 +32,13 @@
     </div>
 
     <div class="tabs--houses--images">
-      <img @click="showImage('construction-1.png')"
-          src="../../assets/img/construction-1.png"
+      <img @click="showImage('construction-1.jpg')"
+          src="../../assets/img/construction-1.jpg"
            alt=""
           class="tabs--houses--images__image">
 
-      <img @click="showImage('construction-2.png')"
-           src="../../assets/img/construction-2.png"
+      <img @click="showImage('construction-2.jpg')"
+           src="../../assets/img/construction-2.jpg"
            alt=""
            class="tabs--houses--images__image">
     </div>
@@ -113,7 +113,7 @@ export default {
       width: 100%;
 
       &__image {
-        max-width: 50%;
+        max-width: 35rem;
         padding: 1rem;
         cursor: pointer;
       }

@@ -20,7 +20,6 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "@babel/preset-es2015": "^7.0.0-beta.53",
     "@vue/cli-plugin-babel": "^3.0.4",
     "@vue/cli-plugin-eslint": "^3.0.4",
     "@vue/cli-service": "^3.0.4",
@@ -30,12 +29,6 @@
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.5.17",
     "webpack-dev-server": "^2.7.1"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "es2015"
-    ]
   },
   "engines": {
     "node": "8.9.3"
