@@ -1,5 +1,5 @@
 <template>
-  <section class="tabs">
+  <section class="tabs container">
     <header class="tabs--heading">
       <img src="../assets/svg/bank-notes-3.svg" alt="">
 
@@ -7,7 +7,7 @@
     </header>
     <main class="tabs--description">
       <h3 class="tabs--description--title">
-        Osiedle Parkowe - gotowe domy na sprzedaż - IV kwartał 2018 r.
+        Osiedle Parkowe - gotowe domy na sprzedaż
       </h3>
 
       <p class="tabs--description--text">
@@ -24,21 +24,21 @@
 </template>
 
 <script>
-  import TabEstate from './tabs/Tab-estate.vue';
-  import TabHouses from './tabs/Tab-houses.vue';
+import TabEstate from './tabs/Tab-estate.vue';
+import TabHouses from './tabs/Tab-houses.vue';
 
-  export default {
-    name: 'Tabs',
-    components: {
-      appTabEstate: TabEstate,
-      appTabHouses: TabHouses,
+export default {
+  name: 'Tabs',
+  components: {
+    appTabEstate: TabEstate,
+    appTabHouses: TabHouses,
+  },
+  computed: {
+    getDescriptionText() {
+      return this.$store.state.tabs.descriptionText;
     },
-    computed: {
-      getDescriptionText() {
-        return this.$store.state.tabs.descriptionText;
-      },
-    },
-  };
+  },
+};
 </script>
 
 <style scoped lang="scss">

@@ -160,17 +160,17 @@ export default new Vuex.Store({
       },
       {
         name: 'Opieka',
-        text: 'W odległości 500 metrów znajduje się Samodzielny Publiczny Zakład Opieki Zrowotnej "Przychodnia" im. Dr. Jamimowicza',
+        text: 'W odległości 500 metrów znajduje się Samodzielny Publiczny Zakład Opieki Zrowotnej "Przychodnia" im. Dr. Jamimowicza.',
         logo: 'heart.svg',
       },
       {
         name: 'Zakupy',
-        text: 'W odległości 300m znajdują się market NETTO oraz market Biedronka',
+        text: 'W odległości 300m znajdują się market NETTO oraz market Biedronka.',
         logo: 'basket-1.svg',
       },
       {
         name: 'Zabytki i punkty sakralne',
-        text: 'W okolicy znajduje się zabytkowy Kościół Ewangelicki w odległości 600 m, oraz Kościół Rzymskokatolicki pw. Św. Apostoła Piotra i Pawła w odległości 870 m',
+        text: 'W okolicy znajduje się zabytkowy Kościół Ewangelicki w odległości 600 m, oraz Kościół Rzymskokatolicki pw. Św. Apostoła Piotra i Pawła w odległości 870 m.',
         logo: 'church.svg',
       },
     ],
@@ -190,27 +190,11 @@ export default new Vuex.Store({
       },
     },
     tabs: {
-      descriptionText: `Nasza inwestycja budowy domków zabudowy szeregowej zlokalizowana jest w
-        mieście Syców, pow.oleśnickim, woj. dolnośląskim.
-        Znakomite połączenie z Wrocławiem trasą S8 (ok. 40 minut jazdy,
-        2 zjazdy do Sycowa – węzeł zachodni i wschodni) jest wielką zaletą
-        lokalizacji inwestycji.`,
+      descriptionText: 'Nasza inwestycja budowy domków zabudowy szeregowej zlokalizowana jest w mieście Syców, pow.oleśnickim, woj. dolnośląskim. Znakomite połączenie z Wrocławiem trasą S8 (ok. 40 minut jazdy, 2 zjazdy do Sycowa – węzeł zachodni i wschodni) jest wielką zaletą lokalizacji inwestycji.',
 
-      estateDescriptionText: `Budowa domków realizowana jest przy ul. Leśnej w bliskim sąsiedztwie ul. Kolejowej.
-      Malownicze położenie działek podkreśla sąsiedztwo parku miejskiego, który zwany jest
-      zielonymi płucami Sycowa, wraz
-      z placem zabaw dla najmłodszych i siłownią. Za parkiem znajduje
-      się kompleks rekreacyjno – sportowy w postaci orlika z boiskiem do piłki siatkowej
-      jak i koszykówki. W przyszłości
-      nieopodal powstanie nowoczesny budynek komendy miejskiej Policji w Sycowie.`,
+      estateDescriptionText: 'Budowa domków realizowana jest przy ul. Leśnej w bliskim sąsiedztwie ul. Kolejowej. Malownicze położenie działek podkreśla sąsiedztwo parku miejskiego, który zwany jest zielonymi płucami Sycowa, wraz z placem zabaw dla najmłodszych i siłownią. Za parkiem znajduje się kompleks rekreacyjno – sportowy w postaci orlika z boiskiem do piłki siatkowej jak i koszykówki. W przyszłości nieopodal powstanie nowoczesny budynek komendy miejskiej Policji w Sycowie.',
 
-      housesDescriptionText: `Powierzchnia użytkowa wynosi 104,15 m2; , która gwarantuje komfort oraz wygodę.
-      Wnętrze zostało bardzo starannie rozplanowane – na parterze znajduje się salon z
-      aneksem kuchennym i częścią jadalnianą, z którego można wyjść na taras oraz niewielka
-      toaleta. Poddasze podzielono między dwa pokoje dla dzieci, dużą łazienkę oraz wygodną
-      sypialnię dla rodziców. W bryłę każdego segmentu wpisano jednostanowiskowy garaż. Elewacja o
-      jasnej kolorystyce ma nowoczesny charakter. Każdy segment posiada własny taras oraz działkę,
-      które będą doskonałym miejscem odpoczynku.`,
+      housesDescriptionText: 'Powierzchnia użytkowa wynosi 104,15 m2 , która gwarantuje komfort oraz wygodę. Wnętrze zostało bardzo starannie rozplanowane – na parterze znajduje się salon z aneksem kuchennym i częścią jadalnianą, z którego można wyjść na taras oraz niewielka toaleta. Poddasze podzielono między dwa pokoje dla dzieci, dużą łazienkę oraz wygodną sypialnię dla rodziców. W bryłę każdego segmentu wpisano jednostanowiskowy garaż. Elewacja o jasnej kolorystyce ma nowoczesny charakter. Każdy segment posiada własny taras oraz działkę, które będą doskonałym miejscem odpoczynku.',
     },
 
   },

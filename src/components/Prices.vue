@@ -11,6 +11,8 @@
 
       <p class="prices--product__details"><span class="bold">Powierzchnia łączna:</span> 104,14m&#178;</p>
       <p class="prices--product__details"><span class="bold">Ilość pokoi:</span> 3</p>
+      <p class="prices--product__details"><span class="bold">Garaż:</span> 1</p>
+
 
       <a v-scroll-to="{el: '.contact', easing: 'linear'}"
          class="main__button">

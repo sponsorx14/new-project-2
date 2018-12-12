@@ -1,7 +1,7 @@
-var express = require('express');
+const express = require('express');
 
-var port = process.env.PORT || 3000;
-var app = express();
+const port = process.env.PORT || 3000;
+const app = express();
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
