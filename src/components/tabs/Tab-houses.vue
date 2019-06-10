@@ -32,14 +32,14 @@
     </div>
 
     <div class="tabs--houses--images">
-      <img @click="showImage('construction-1.jpg')"
-          src="../../assets/img/construction-1.jpg"
-           alt=""
-          class="tabs--houses--images__image">
+      <img @click="showImage('construction-3.png')"
+           src="../../assets/img/construction-3.png"
+           alt="construction-1"
+           class="tabs--houses--images__image">
 
-      <img @click="showImage('construction-2.jpg')"
-           src="../../assets/img/construction-2.jpg"
-           alt=""
+      <img @click="showImage('construction-4.png')"
+           src="../../assets/img/construction-4.png"
+           alt="construction-2"
            class="tabs--houses--images__image">
     </div>
   </main>
@@ -69,110 +69,110 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import '../../scss-snippets/main.scss';
+@import '../../scss-snippets/main.scss';
 
-  .tabs--houses {
+.tabs--houses {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--text {
+    @include font(1.5rem, 400, $dark-grey-2);
+    text-align: center;
+    line-height: 2.6rem;
+  }
+
+  &--information {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 4rem;
 
-    &--text {
-      @include font(1.5rem, 400, $dark-grey-2);
-      text-align: center;
-      line-height: 2.6rem;
+    &--wrapper {
+      margin: 2rem 5rem;
     }
 
-    &--information {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      margin: 4rem;
-
-      &--wrapper {
-        margin: 2rem 5rem;
-      }
-
-      &--title {
-        @include font(1.8rem, 500, $dark-grey-2);
-        padding: 0 1rem;
-      }
-
-      &--table {
-        padding: 2rem 0;
-
-        &--data {
-          padding: .5rem 1rem;
-          @include font(1.6rem, 400, $dark-grey-2);
-        }
-      }
+    &--title {
+      @include font(1.8rem, 500, $dark-grey-2);
+      padding: 0 1rem;
     }
 
-    &--images {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
+    &--table {
+      padding: 2rem 0;
 
-      &__image {
-        max-width: 35rem;
-        padding: 1rem;
-        cursor: pointer;
+      &--data {
+        padding: .5rem 1rem;
+        @include font(1.6rem, 400, $dark-grey-2);
       }
     }
   }
 
-  @media only screen and (max-width: 1200px) {
-    .tabs--houses {
-      &--information {
+  &--images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &__image {
+      max-width: 35rem;
+      padding: 1rem;
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .tabs--houses {
+    &--information {
+      margin: 4rem 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .tabs--houses {
+    &--information {
+      margin: 4rem 0;
+
+      &--wrapper {
         margin: 4rem 2rem;
       }
     }
   }
+}
 
-  @media only screen and (max-width: 992px) {
-    .tabs--houses {
-      &--information {
-        margin: 4rem 0;
-
-        &--wrapper {
-          margin: 4rem 2rem;
-        }
-      }
-    }
-  }
-
-  @media only screen and (max-width: 820px) {
-    .tabs--houses {
-      &--information {
-        flex-direction: column;
-        align-items: center;
-
-        &--wrapper {
-          margin: 2rem;
-        }
-      }
-    }
-  }
-
-  @media only screen and (max-width: 768px) {
-    .tabs--houses--text {
-      text-align: left;
-    }
-  }
-
-  @media only screen and (max-width: 650px) {
-    .tabs--houses--images {
+@media only screen and (max-width: 820px) {
+  .tabs--houses {
+    &--information {
       flex-direction: column;
+      align-items: center;
 
-      &__image {
-        max-width: 70vw;
+      &--wrapper {
+        margin: 2rem;
       }
     }
   }
+}
 
-  @media only screen and (max-width: 450px) {
-    .tabs--houses--information--wrapper {
-      margin: 2rem 0;
+@media only screen and (max-width: 768px) {
+  .tabs--houses--text {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .tabs--houses--images {
+    flex-direction: column;
+
+    &__image {
+      max-width: 70vw;
     }
   }
+}
+
+@media only screen and (max-width: 450px) {
+  .tabs--houses--information--wrapper {
+    margin: 2rem 0;
+  }
+}
 
 </style>

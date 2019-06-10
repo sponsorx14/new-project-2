@@ -4,7 +4,7 @@
       <img src="../assets/svg/email-send-2.svg" alt="">
 
       <h2 class="section--title">Kontakt</h2>
-
+      <span class="section__info">Przyjmujemy już rezerwacje</span>
       <div class="contact--wrapper">
         <article class="contact--details">
           <p class="contact--details__company-name">{{ getContactInformation.main.name }}</p>
@@ -138,7 +138,7 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin: 8rem 0;
+      margin: 5rem 0;
     }
 
     &--details {
@@ -310,6 +310,14 @@ export default {
     &::placeholder {
       color: $dark-grey-2;
     }
+  }
+
+  .section__info {
+    margin-top: 4rem;
+    width: 100%;
+    padding-left: 1rem;
+    @include font(1.8rem, 400, $dark-grey);
+
   }
 
   .section--title {

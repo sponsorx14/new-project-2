@@ -7,7 +7,7 @@
     </header>
     <main class="tabs--description">
       <h3 class="tabs--description--title">
-        Osiedle Parkowe - gotowe domy na sprzedaż
+        Osiedle Parkowe - gotowe domy na sprzedaż II etap inwestycji
       </h3>
 
       <p class="tabs--description--text">
